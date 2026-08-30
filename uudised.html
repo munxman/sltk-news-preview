@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- MOCK — noindex until deployed -->
+ <meta name="robots" content="noindex,nofollow">
+
+ <title>Uudised | SL Tervisekeskus</title>
+ <meta name="description" content="SL Tervisekeskuse uudised ja aktuaalne terviseinfo. Perearstikeskus Ülemiste linnaosas Tallinnas – vaktsineerimine, terviseuudised ja patsiendijuhendid.">
+
+ <!-- Canonical + hreflang (live-deploy values; skipped in mock) -->
+ <link rel="canonical" href="https://www.sltervisekeskus.ee/uudised.html">
+ <link rel="alternate" hreflang="et" href="https://www.sltervisekeskus.ee/uudised.html">
+ <link rel="alternate" hreflang="x-default" href="https://www.sltervisekeskus.ee/">
+
+ <!-- Open Graph -->
+ <meta property="og:type" content="website">
+ <meta property="og:site_name" content="SL Tervisekeskus">
+ <meta property="og:title" content="Uudised | SL Tervisekeskus">
+ <meta property="og:description" content="SL Tervisekeskuse uudised ja terviseinfo perearstikeskusest Ülemiste linnaosas Tallinnas.">
+ <meta property="og:url" content="https://www.sltervisekeskus.ee/uudised.html">
+ <meta property="og:image" content="https://www.sltervisekeskus.ee/assets/og-default.jpg">
+ <meta property="og:locale" content="et_EE">
+
+ <!-- Twitter Card -->
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Uudised | SL Tervisekeskus">
+ <meta name="twitter:description" content="SL Tervisekeskuse uudised ja terviseinfo perearstikeskusest Ülemiste linnaosas Tallinnas.">
+
+ <!-- Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+ <!-- Design system (copied from live site) -->
+ <link rel="stylesheet" href="assets/site.css">
+
+ <!-- News-listing styles (supplement site.css) -->
+ <style>
+  .news-list {
+   display: flex;
+   flex-direction: column;
+   gap: var(--sp-xl, 2rem);
+   max-width: 760px;
+  }
+  .news-card {
+   border: 1px solid #e5e7eb;
+   border-radius: 12px;
+   padding: var(--sp-xl, 2rem);
+   background: #fff;
+   transition: box-shadow .18s ease;
+  }
+  .news-card:hover {
+   box-shadow: 0 4px 18px rgba(0,0,0,.08);
+  }
+  .news-card-meta {
+   display: flex;
+   align-items: center;
+   gap: .75rem;
+   margin-bottom: .6rem;
+  }
+  .news-card-date {
+   font-size: .78rem;
+   font-weight: 600;
+   color: var(--clr-muted, #888);
+   letter-spacing: .04em;
+   text-transform: uppercase;
+  }
+  .news-card-tag {
+   display: inline-block;
+   font-size: .7rem;
+   font-weight: 700;
+   letter-spacing: .06em;
+   text-transform: uppercase;
+   color: var(--sage-dark, #3a5a40);
+   background: rgba(58,90,64,.1);
+   padding: 2px 8px;
+   border-radius: 20px;
+  }
+  .news-card-title {
+   font-size: 1.15rem;
+   font-weight: 700;
+   margin: 0 0 .6rem;
+   line-height: 1.35;
+  }
+  .news-card-title a {
+   color: inherit;
+   text-decoration: none;
+  }
+  .news-card-title a:hover {
+   color: var(--sage-dark, #3a5a40);
+   text-decoration: underline;
+  }
+  .news-card-teaser {
+   color: var(--clr-mid, #555);
+   font-size: .95rem;
+   line-height: 1.6;
+   margin: 0 0 1rem;
+  }
+  .news-card-cta {
+   font-size: .88rem;
+   font-weight: 600;
+   color: var(--sage-dark, #3a5a40);
+   text-decoration: none;
+  }
+  .news-card-cta:hover {
+   text-decoration: underline;
+  }
+  .news-empty {
+   color: var(--clr-muted, #888);
+   font-style: italic;
+  }
+ </style>
+
+ <!-- Schema.org: BreadcrumbList -->
+ <script type="application/ld+json">
+ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+   {"@type":"ListItem","position":1,"name":"Avaleht","item":"https://www.sltervisekeskus.ee/"},
+   {"@type":"ListItem","position":2,"name":"Uudised","item":"https://www.sltervisekeskus.ee/uudised.html"}
+  ]
+ }
+ </script>
+
+ <!-- GA4 (same as live; noindex mock so harmless) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8RS05GMN6"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E8RS05GMN6');
+ </script>
+
+ <!-- Favicon -->
+ <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+ <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+ <link rel="manifest" href="assets/site.webmanifest">
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Liigu põhisisu juurde</a>
+
+<!-- ── Emergency bar ──────────────────────────────────── -->
+<div class="emergency-bar" role="complementary" aria-label="Abi töövälisel ajal">
+ <div class="ebar-row"><strong>Töövälisel ajal:</strong> <span>1220 - perearsti nõuandeliin (iga päev 8-22, eesti keeles, tasuta)</span></div>
+ <div class="ebar-row"><a href="https://valvekliinik.ee/" target="_blank" rel="noopener noreferrer">Valvekliinik</a> <a href="tel:+37259110909">5 911 0909</a> - tasuline vastuvõtt samal päeval, samal korrusel, Esmasp. - Laup., ka pühade ajal</div>
+</div>
+
+<!-- ── Header ─────────────────────────────────────────── -->
+<header class="site-header">
+ <div class="container">
+  <a href="/" class="logo" aria-label="SL Tervisekeskus - avaleht">
+   <span class="sl">sl</span>&nbsp;tervisekeskus
+  </a>
+
+  <!-- Desktop nav -->
+  <nav class="main-nav" aria-label="Põhinavigatsioon">
+   <div class="nav-group">
+    <a href="/#teenused">Teenused</a>
+    <div class="nav-dropdown" role="menu">
+     <a href="/broneerimine.html" role="menuitem">Kuidas saada abi</a>
+     <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer" role="menuitem">e-Perearstikeskus ↗</a>
+     <a href="/retseptid.html" role="menuitem">Kordusretsept</a>
+     <a href="/toovoimetusleht.html" role="menuitem">Töövõimetusleht</a>
+     <a href="/analyysid.html" role="menuitem">Analüüside tulemused</a>
+     <a href="/toendid.html" role="menuitem">Tervisetõendid</a>
+     <a href="/toovaline-aeg.html" role="menuitem">Töövälisel ajal</a>
+    </div>
+   </div>
+   <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer" class="btn-nav" style="letter-spacing:.04em;">e-Perearstikeskus ↗</a>
+   <a href="/materjalid.html">Materjalid</a>
+   <a href="/uudised.html" aria-current="page">Uudised</a>
+   <div class="nav-group">
+    <a href="/kontakt.html">Kontakt</a>
+    <div class="nav-dropdown" role="menu">
+     <a href="/kontakt.html" role="menuitem">Kontakt ja asukoht</a>
+     <a href="/personal.html" role="menuitem">Personal</a>
+     <a href="/hinnakiri.html" role="menuitem">Hinnakiri</a>
+    </div>
+   </div>
+   <div class="lang-switch" aria-label="Keelevalik">
+    <a href="/" class="active" hreflang="et" lang="et">ET</a>
+    <a href="/en/" hreflang="en" lang="en">EN</a>
+    <a href="/ru/" hreflang="ru" lang="ru">RU</a>
+    <a href="/fi/" hreflang="fi" lang="fi">FI</a>
+    <div class="nav-hanging-tab"><a href="/registreerumine.html">Registreeruge nimistusse</a></div>
+   </div>
+  </nav>
+
+  <!-- Mobile hamburger -->
+  <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Ava menüü">
+   <span></span><span></span><span></span>
+  </button>
+ </div>
+</header>
+
+<!-- Mobile nav panel -->
+<nav id="mobile-nav" class="mobile-nav" aria-label="Mobiilinavigatsioon">
+ <a href="/broneerimine.html">Kuidas saada abi</a>
+ <a href="https://eperearstikeskus.ee/patient/welcome" target="_blank" rel="noopener noreferrer">e-Perearstikeskus ↗</a>
+ <a href="/retseptid.html">Kordusretsept</a>
+ <a href="/toovoimetusleht.html">Töövõimetusleht</a>
+ <a href="/analyysid.html">Analüüside tulemused</a>
+ <a href="/toendid.html">Tervisetõendid</a>
+ <a href="/personal.html">Personal</a>
+ <a href="/registreerumine.html">Registreeruge nimistusse</a>
+ <a href="/hinnakiri.html">Hinnakiri</a>
+ <a href="/materjalid.html">Materjalid</a>
+ <a href="/uudised.html" aria-current="page">Uudised</a>
+ <a href="/toovaline-aeg.html">Töövälisel ajal</a>
+ <a href="/kontakt.html">Kontakt</a>
+ <div class="mobile-lang"><a href="/" class="active">ET</a><a href="/en/">EN</a><a href="/ru/">RU</a><a href="/fi/">FI</a></div>
+</nav>
+
+<!-- ── Main content ───────────────────────────────────── -->
+<main id="main-content">
+
+ <div class="page-header">
+  <div class="container">
+   <nav class="breadcrumb" aria-label="Asukohajälg">
+    <a href="/">Avaleht</a><span class="sep">/</span><span>Uudised</span>
+   </nav>
+   <h1>Uudised</h1>
+   <p class="lead">Aktuaalsed uudised ja terviseinfo SL Tervisekeskusest.</p>
+  </div>
+ </div>
+
+ <section class="section">
+  <div class="container">
+
+   <div class="news-list" role="list">
+
+    <!-- News item 1: Täiskasvanute vaktsineerimine -->
+    <article class="news-card" role="listitem">
+     <div class="news-card-meta">
+      <span class="news-card-date">30. august 2026</span>
+      <span class="news-card-tag">Vaktsineerimine</span>
+     </div>
+     <h2 class="news-card-title">
+      <a href="uudised/taiskasvanute-vaktsineerimine.html">
+       Täiskasvanute vaktsineerimine: uued hüvitused ja mida peab teadma
+      </a>
+     </h2>
+     <p class="news-card-teaser">
+      Alates 2026. aasta sügisest on gripivaktsiin tasuta ka teatud krooniliste haigustega täiskasvanutele vanuses 18–59. Lisaks tasub üle vaadata, millised lapsepõlves alustatud vaktsiinid vajaksid uuendamist – perearst aitab kaitse hetkeolukorra hinnata.
+     </p>
+     <a class="news-card-cta" href="uudised/taiskasvanute-vaktsineerimine.html">Loe edasi →</a>
+    </article>
+
+   </div>
+
+  </div>
+ </section>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer class="site-footer" aria-label="Jalus">
+ <div class="container">
+  <div class="footer-grid">
+   <div class="footer-brand">
+    <a href="/" class="logo"><span class="sl">sl</span>&nbsp;tervisekeskus</a>
+    <p class="footer-tagline">Perearstikeskus Ülemiste linnaosas Tallinnas.<br>Sepapaja 12/1</p>
+   </div>
+   <div class="footer-col">
+    <h4>Teenused</h4>
+    <ul>
+     <li><a href="/broneerimine.html">Kuidas saada abi</a></li>
+     <li><a href="/retseptid.html">Kordusretsept</a></li>
+     <li><a href="/toovoimetusleht.html">Töövõimetusleht</a></li>
+     <li><a href="/analyysid.html">Analüüside tulemused</a></li>
+     <li><a href="/toendid.html">Tervisetõendid</a></li>
+     <li><a href="/toovaline-aeg.html">Töövälisel ajal</a></li>
+    </ul>
+   </div>
+   <div class="footer-col">
+    <h4>Patsiendile</h4>
+    <ul>
+     <li><a href="/registreerumine.html">Registreeruge nimistusse</a></li>
+     <li><a href="/hinnakiri.html">Hinnakiri</a></li>
+     <li><a href="/materjalid.html">Materjalid</a></li>
+     <li><a href="/personal.html">Personal</a></li>
+     <li><a href="/uudised.html">Uudised</a></li>
+     <li><a href="/kontakt.html">Kontakt</a></li>
+     <li><a href="/en/for-foreign-workers.html">For foreign workers</a></li>
+    </ul>
+   </div>
+   <div class="footer-col">
+    <h4>Juriidiline</h4>
+    <ul>
+     <li><a href="/privaatsuspoliitika.html">Privaatsuspoliitika</a></li>
+     <li><a href="/vilepuhuja.html">Vilepuhuja kaitse</a></li>
+    </ul>
+    <div style="margin-top:var(--sp-lg);display:flex;gap:6px;flex-wrap:wrap;">
+     <a href="/" style="font-size:.75rem;font-weight:700;color:rgba(255,255,255,.7);text-decoration:underline;">ET</a>
+     <a href="/en/" style="font-size:.75rem;font-weight:700;color:rgba(255,255,255,.5);">EN</a>
+     <a href="/ru/" style="font-size:.75rem;font-weight:700;color:rgba(255,255,255,.5);">RU</a>
+     <a href="/fi/" style="font-size:.75rem;font-weight:700;color:rgba(255,255,255,.5);">FI</a>
+    </div>
+   </div>
+  </div>
+  <hr class="footer-hr">
+  <div class="footer-legal">
+   <span>© 2026 SL Tervisekeskus OÜ · reg 17473441 · Sepapaja 12/1, 11415 Tallinn</span>
+   <a href="/privaatsuspoliitika.html">Privaatsuspoliitika</a>
+   <a href="/vilepuhuja.html">Vilepuhuja kaitse</a>
+  </div>
+ </div>
+</footer>
+
+<!-- Mobile floating CTA bar -->
+<div class="mobile-cta" role="complementary" aria-label="Kiirtoimingud">
+ <a href="/broneerimine.html">
+  <span class="cta-icon"></span>Saage abi
+ </a>
+ <a href="/registreerumine.html">
+  <span class="cta-icon"></span>Registreeruge
+ </a>
+</div>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

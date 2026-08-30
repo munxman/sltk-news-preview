@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&amp;display=swap');
+      .sl {
+        font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 307px;
+        fill: #9BAD95;
+      }
+    </style>
+  </defs>
+  <!-- Dark rounded-square (#101010, corner radius ~18%) -->
+  <rect x="0" y="0" width="512" height="512" rx="92" ry="92" fill="#101010"/>
+  <!-- "sl" wordmark — text-anchor=middle + dominant-baseline=central = centered on EM square -->
+  <text class="sl" x="256" y="256" text-anchor="middle" dominant-baseline="central">sl</text>
+</svg>
